@@ -16,7 +16,7 @@ from keras.utils import np_utils
 from keras import backend as K
 import aetros.backend
 
-job = aetros.backend.start_job('marcj/mnist_cnn')
+job = aetros.backend.start_job('neotea/git_test')
 
 batch_size = job.get_parameter('batch_size')
 nb_classes = 10
