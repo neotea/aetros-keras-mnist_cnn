@@ -62,6 +62,7 @@ model.add(Dense(num_classes, activation='softmax'))
 model.compile(loss=keras.losses.categorical_crossentropy,
               optimizer=keras.optimizers.Adadelta(),
               metrics=['accuracy'])
+from aetros.keras import KerasIntegration
 keras = KerasIntegration('neotea/git_test', model, job_backend=job, insights=True)
 model.fit(x_train, y_train,
           batch_size=batch_size,
