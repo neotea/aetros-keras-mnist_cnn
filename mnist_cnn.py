@@ -14,6 +14,7 @@ from keras import backend as K
 import aetros.backend
 
 job = aetros.backend.start_job('neotea/git_test')
+job.upload_file(__file__)
 
 batch_size = 128
 num_classes = 10
@@ -61,7 +62,7 @@ model.add(Dense(num_classes, activation='softmax'))
 model.compile(loss=keras.losses.categorical_crossentropy,
               optimizer=keras.optimizers.Adadelta(),
               metrics=['accuracy'])
-
+keras = KerasIntegration('neotea/git_test', model, job_backend=job, insights=True)
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
